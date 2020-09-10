@@ -1,21 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {View} from 'react-native';
+import {Header} from "./components/header/Header";
+import {MainContentContainer} from "./components/main_content/MainContentContainer";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>henlo :)</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+export default class App extends React.Component{
+    render() {
+        return (
+            <View style={{flex: 1, flexDirection: 'column', paddingTop: 20, paddingLeft: 2, paddingRight: 2}}>
+                <View style={{flex: 1}}>
+                    <Header />
+                </View>
+
+                <View style={{flex: 6}}>
+                    <MainContentContainer />
+                </View>
+            </View>
+        );
+    }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
